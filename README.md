@@ -33,9 +33,7 @@ Users should be able to:
 - Live Site URL: [Live Site URL](https://fylo-data-storage-component0001.netlify.app/)
 
 ### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
+- SASS
 - Flexbox
 - Mobile-first workflow
 
