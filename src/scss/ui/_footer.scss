@@ -1,0 +1,16 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer {
+  padding: 5rem;
+  position: absolute;
+  bottom: 0;
+  color: v.$white;
+  text-align: center;
+
+
+  &__link {
+    text-decoration: none;
+    color: v.$gradientF;
+  }
+}

@@ -1,0 +1,119 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.information {
+  background-color: v.$darkbBlue;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  @include m.desktop {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: v.$paleBlue;
+    font-weight: 400;
+    text-align: center;
+    @include m.desktop { 
+      text-align:left;
+    }
+  }
+
+  &__span {
+    font-weight: 700;
+    color: v.$paleBlue;
+  }
+
+  &__bar {
+    width: 100%;
+    height: 2rem;
+    background-color: lighten(v.$veryDarkBlue, 8%);
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 85%;
+      height: 100%;
+      left: 0;
+      border-radius: 1rem;
+      background-image: linear-gradient(to right, v.$gradientF, v.$gradientS);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background-color: v.$white;
+      right: 15%;
+    }
+  }
+
+  &__capacity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__gigas {
+    font-weight: 700;
+    color: v.$paleBlue;
+    position: relative;
+    @include m.desktop { 
+    }
+  }
+
+  
+
+  &__bubble {
+    font-size: 3rem;
+    color: v.$veryDarkBlue;
+    font-weight: 700;
+    position: absolute;
+    bottom:-45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: v.$white;
+    padding: 1rem 2rem;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 1rem;
+    @include m.desktop { 
+      transform: none;
+      bottom: auto;
+      left: auto;
+      top: -30%;
+      right: 10%;
+      z-index: 1;
+      border-radius: 1rem 1rem 0rem 1rem;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 3rem;
+        height: 3rem;
+        background-color: v.$white;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        right: 0px;
+        left: auto;
+        bottom: -35%;
+        z-index: -1;
+
+      }
+    }
+  }
+
+  &__left {
+    font-size: 1.5rem;
+    color: v.$grayBlue;
+    text-transform: uppercase;
+  }
+}
